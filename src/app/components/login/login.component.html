@@ -1,0 +1,63 @@
+<div class="form-page">
+    <h2>Login</h2>
+
+    <p>Not Registered? <a routerLink="/signup">Sign Up</a></p>
+    <form #f="ngForm" (ngSubmit)="onSubmitTemplate()">    
+    <mat-error *ngIf="error">
+    {{error}}</mat-error>
+  
+    <section>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+       
+    </mat-form-field>
+    </section>
+    <section>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+       
+      </mat-form-field>
+    </section>
+      <button type="submit" [disabled]="!f.valid"  mat-raised-button color="primary">Login</button>
+    </form>
+
+    <a mat-stroked-button class="thirdparty-login" [href]="googleOAuthUrl">
+        <img class="google-icon thirdparty-icon" src="../assets/images/google_logo.svg"/>
+        Sign in with Google   
+    </a>
+    <a mat-stroked-button class="thirdparty-login facebook-login" [href]="facebookOAuthUrl">
+        <mat-icon class="thirdparty-icon">facebook</mat-icon>
+        Sign in with Facebook
+    </a>
+</div>
+
+
+
+
+
+<!-- <div class="form-page">
+<section class="sample-app-content">
+    <h4 *ngIf="error">{{error}}</h4>
+   
+ 
+    <form #f="ngForm" (ngSubmit)="onSubmitTemplate()">
+        <p>
+            <label>Username:</label>
+            <input type="text"  
+                [(ngModel)]="username" name="username" required>
+        </p>
+        <p>
+            <label>Password:</label>
+            <input type="password"  
+                [(ngModel)]="password" name="password" required>
+        </p>
+        <p>
+            <button type="submit" [disabled]="!f.valid">Submit</button>
+        </p>
+    </form>
+</section>
+</div> -->

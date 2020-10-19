@@ -1,0 +1,13 @@
+<form (ngSubmit)="createStripeToken()" class="checkout">
+  
+    <!-- <label for="card-info">Credit or Debit Card</label> -->
+    <div id="form-field">
+        <div id="card-info" #cardInfo></div>
+       
+        <button type="submit" mat-raised-button color="primary">Pay ${{_totalAmount}}</button>
+        <mat-error id="card-errors" role="alert" *ngIf="cardError">
+            <mat-icon style="color: #f44336">cancel</mat-icon>
+            &nbsp;{{ cardError }}
+        </mat-error>
+    </div>
+</form>

@@ -1,0 +1,9 @@
+<div [ngClass]="setClasses()">
+    <div>
+        <input type="checkbox" (change)="toggleCheckbox(todo)" [checked]="todo.completed">
+        {{todo.title}}
+        <button class="del" (click)="onDelete(todo)">x</button>
+        <p class="date-ago">{{todo.createdAt | dateAgo}}</p>
+    </div>
+
+</div>

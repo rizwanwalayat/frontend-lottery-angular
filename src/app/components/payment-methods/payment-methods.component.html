@@ -1,0 +1,29 @@
+<div class="form-page">
+    <h2>Please select your desired payment method:</h2>
+    <mat-tab-group class="stretched-tabs ">
+        <mat-tab> 
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">credit_card</mat-icon>
+                Credit Card
+          </ng-template>
+          
+          <app-stripe-payment [totalAmount]="cart.totalAmount">  </app-stripe-payment>
+     
+        </mat-tab>
+        <mat-tab> 
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">account_balance_wallet</mat-icon>
+                Wallet
+          </ng-template>
+          <div class="payment-content">Wallet Balance: <span class="payment">${{walletBalance | number : '1.2-2'}}</span></div>
+          <button mat-raised-button color="primary" (click)="payWithWallet()">Pay with Wallet</button>
+        </mat-tab>
+        <mat-tab> 
+            <ng-template mat-tab-label>
+                PayPal
+          </ng-template>
+          <div class="payment-content">PayPal</div> 
+        </mat-tab>
+       
+    </mat-tab-group>
+</div>

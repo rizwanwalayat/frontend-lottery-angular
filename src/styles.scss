@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+// input[type='submit']{
+//     background: grey;
+//     color: white;
+// }
+html, body { height: 100%; }
+body { 
+    line-height: 1.4;
+    width: 80%;
+    margin: auto; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+.mat-form-field{
+    width: 500px !important;
+}
+
+.form-page{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    margin-top: 10px;
+    margin-bottom: 10px;    
+}
+
+.form-page button{
+    width: 500px;
+
+}
+
+button{
+    margin: 10px auto;
+}

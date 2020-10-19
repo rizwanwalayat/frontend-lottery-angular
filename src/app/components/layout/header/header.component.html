@@ -1,0 +1,14 @@
+<header class="header">
+    <h1>Todo List</h1>
+    <nav>
+        <a routerLink="/">Home</a> . 
+        <a routerLink="/about">About</a> . 
+        <a *ngIf="!(isLoggedIn | async) else elseBlock" routerLink="/login">Log In</a> 
+        <ng-template #elseBlock>
+            <a routerLink="/dashboard">Dashboard</a> . 
+            <a routerLink="/todos">Todos</a> . 
+            <a routerLink="/lotteries">Lotteries</a> . 
+            <a href="#" (click)="logout()">Logout</a>
+        </ng-template>
+     </nav>
+</header>
